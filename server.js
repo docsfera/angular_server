@@ -28,7 +28,7 @@ app.get('/api/users', async (req, res) => {
 app.post('/api/user', (req, res) => {
     const user = req.body.user;
     users.push(user);
-    res.json("user addedd");
+    res.send("user addedd");
 });
 
 app.get('/', (req,res) => {
