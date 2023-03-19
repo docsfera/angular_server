@@ -2,6 +2,7 @@ import pg from "pg"
 const {Pool} = pg
 import express from "express"
 import bodyParser from "body-parser"
+import cors from "cors"
 const app = express()
 const port = 3080;
 
@@ -14,7 +15,7 @@ const pool = new Pool({
     password: 'oALD2w7QuP7WT8STEsPg',
     port: 7546 ,
 });
-
+app.use(cors());
 app.use(bodyParser.json())
 
 app.get('/api/users', async (req, res) => {
